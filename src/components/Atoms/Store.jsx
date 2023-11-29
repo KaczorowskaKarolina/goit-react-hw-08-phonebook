@@ -28,6 +28,18 @@ export const deleteContact = createAsyncThunk('contacts/deleteContact', async (c
   return contactId;
 });
 
+const userSlice = createSlice({
+  name: 'user',
+  initialState: { email: null },
+  reducers: {
+    loginUser: (state, action) => {
+      state.email = action.payload.email;
+    },
+    logoutUser: (state) => {
+      state.email = null;
+    },
+  },
+});
 
 const contactsSlice = createSlice({
   name: 'contacts',
@@ -58,10 +70,12 @@ const filterSlice = createSlice({
 });
 
 export const { setFilter } = filterSlice.actions;
+export const { loginUser, logoutUser } = userSlice.actions;
 
 const rootReducer = {
   contacts: contactsSlice.reducer,
   filter: filterSlice.reducer,
+  user: userSlice.reducer,
 };
 
 const store = configureStore({
