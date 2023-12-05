@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import { registerUser } from '../Atoms/Store'; // Dodaj import odpowiedniej akcji z Redux
+import { useNavigate } from 'react-router-dom';
+import { registerUser } from '../Atoms/Store';
 
-const Register = () => {
+export const RegisterComponent = () => {
   const dispatch = useDispatch();
-  const history = useHistory();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({ email: '', password: '' });
 
   const handleChange = (event) => {
@@ -15,9 +15,13 @@ const Register = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // Dispatch akcji do Redux do rejestracji użytkownika
-    await dispatch(registerUser(formData));
-    history.push('/login'); // Przekieruj użytkownika na stronę logowania po rejestracji
+    
+    try {
+      await dispatch(registerUser(formData));
+      navigate('/login');
+    } catch (error) {
+      console.error('Error registering user:', error.message);
+    }
   };
 
   return (
@@ -45,4 +49,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default RegisterComponent;
