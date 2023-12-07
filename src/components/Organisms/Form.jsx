@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addContact } from '../Atoms/Store';
 import { nanoid } from 'nanoid';
 
 import './form.css';
 
-const Form = ({ onSubmit }) => {
+const Form = () => {
   const [formData, setFormData] = useState({ name: '', number: '' });
   const nameId = nanoid();
   const numberId = nanoid();
+  const dispatch = useDispatch();
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -16,7 +19,8 @@ const Form = ({ onSubmit }) => {
       return;
     }
 
-    onSubmit({ id: nanoid(), name, number }); 
+    dispatch(addContact({ id: nanoid(), name, number }));
+
     reset();
   };
 
