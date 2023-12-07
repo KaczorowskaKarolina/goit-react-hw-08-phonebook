@@ -5,7 +5,17 @@ export const fetchContacts = createAsyncThunk('contacts/fetchContacts', async ()
   return response.json();
 });
 
-export const addContact = createAsyncThunk('contacts/addContact', async (contactData) => {
+export const addContact = createAsyncThunk('contacts/addContact', async (contactData, { getState }) => {
+  const state = getState();
+  const existingContact = state.contacts.data.find(
+    (contact) => contact.name.toLowerCase() === contactData.name.toLowerCase()
+  );
+
+  if (existingContact) {
+    // Przerwij dodawanie kontaktu, jeśli już istnieje
+    throw new Error('This contact is already on your list');
+  }
+
   const response = await fetch('https://655bc2e8ab37729791a98fce.mockapi.io/contacts', {
     method: 'POST',
     headers: {
@@ -13,6 +23,7 @@ export const addContact = createAsyncThunk('contacts/addContact', async (contact
     },
     body: JSON.stringify(contactData),
   });
+
   return response.json();
 });
 

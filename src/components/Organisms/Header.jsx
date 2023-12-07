@@ -1,21 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Navigation = () => {
   return (
-    <header className="header">
-      <nav>
-        <ul>
-          <li>
-            <Link to="/signin">Sign In</Link>
-          </li>
-          <li>
-            <Link to="/login">Log In</Link>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <nav>
+      <ul>
+        <li>
+          <Link to="/register">Register</Link>
+        </li>
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
+        <li>
+          <Link to="/contacts">Contacts</Link>
+        </li>
+      </ul>
+    </nav>
   );
 };
 
-export default Header;
+export default Navigation;

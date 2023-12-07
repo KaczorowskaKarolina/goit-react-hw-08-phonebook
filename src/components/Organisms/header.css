@@ -1,10 +1,8 @@
-header {
+/* header {
     background-color: #333;
-    /* Kolor tła nagłówka */
     color: #fff;
-    /* Kolor tekstu w nagłówku */
     padding: 10px;
-    /* Wewnętrzny odstęp nagłówka */
+    font-size: 12px;
 }
 
 nav ul {
@@ -14,19 +12,20 @@ nav ul {
 }
 
 nav ul li {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     margin-right: 20px;
-    /* Odstęp między elementami menu */
 }
 
 nav ul li a {
     text-decoration: none;
     color: #fff;
-    /* Kolor linków w menu */
     font-weight: bold;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
-    /* Podkreślenie linku po najechaniu myszką */
-}
+    text-decoration: none;
+    color: yellow;
+} */
