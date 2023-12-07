@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts, addContact, deleteContact, setFilter } from '../Atoms/Store';
+
 import Form from '../Organisms/Form';
 import Filter from '../Molecules/Filter';
 import List from '../Organisms/List';
+
 import { nanoid } from 'nanoid';
 
 import css from './app.css';
