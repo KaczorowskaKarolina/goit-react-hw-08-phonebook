@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Route, Routes } from 'react-router-dom';
 
 import Register from '../Molecules/Register';
 import Login from '../Molecules/Login';
@@ -11,15 +11,15 @@ import '../Pages/app.css'
 
 const App = () => {
   return (
-    <Router>
+<div className="container">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/contacts" element={<Contacts />} />
+      </Routes>
       <Navigation />
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/register" component={Register} />
-        <Route path="/login" component={Login} />
-        <Route path="/contacts" component={Contacts} />
-      </Switch>
-    </Router>
+    </div>
   );
 };
 

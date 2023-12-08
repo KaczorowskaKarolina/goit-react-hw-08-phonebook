@@ -1,73 +1,65 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addContact } from '../Atoms/Store';
-import { nanoid } from 'nanoid';
+import { addContactAsync } from 'redux/actions.jsx';
+// import { addContact } from '../Atoms/Store';
+// import { nanoid } from 'nanoid';
 
 import './form.css';
 
 const Form = () => {
-  const [formData, setFormData] = useState({ name: '', number: '' });
-  const nameId = nanoid();
-  const numberId = nanoid();
   const dispatch = useDispatch();
+  const [name, setName] = useState('');
+  const [number, setNumber] = useState('');
 
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-    const { name, number } = formData;
+  const handleChange = e => {
+    const { name, value } = e.target;
+    if (name === 'name') {
+      setName(value);
+    } else if (name === 'number') {
+      setNumber(value);
+    }
+  };
 
-    if (!name || !number) {
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    // Sprawdź, czy name i number nie są puste
+    if (!name.trim() || !number.trim()) {
+      alert('Name and number are required fields.');
       return;
     }
 
-    dispatch(addContact({ id: nanoid(), name, number }));
+    // Wywołaj akcję dodawania kontaktu
+    dispatch(addContactAsync({ name, number }));
 
-    reset();
+    // Zresetuj formularz
+    setName('');
+    setNumber('');
   };
-
-  const reset = () => {
-    setFormData({ name: '', number: '' });
-  };
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
-  };
-
-  const { name, number } = formData;
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
-      <label className="label" htmlFor={nameId}>
-        Name
+    <form onSubmit={handleSubmit}>
+      <div className="container">
         <input
+          className="phonebook-input"
           type="text"
           name="name"
+          placeholder="Name"
           value={name}
           onChange={handleChange}
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces."
-          required
-          placeholder="Name"
-          id={nameId}
-          autoComplete="off"
         />
-      </label>
-      <label className="label" htmlFor={numberId}>
-        Number
         <input
+          className="phonebook-input"
           type="tel"
           name="number"
+          placeholder="Phone Number"
           value={number}
           onChange={handleChange}
-          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-          required
-          placeholder="Number"
-          id={numberId}
-          autoComplete="off"
         />
-      </label>
-      <button type="submit">Add contact</button>
+        <button className="phonebook-btn" type="submit">
+          Add contact
+        </button>
+      </div>
     </form>
   );
 };
