@@ -1,14 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const UserMenu = () => {
-  // Implementacja menu użytkownika
-
+const UserMenu = ({ userEmail, onLogout }) => {
   return (
     <div>
-      <p>mango@mail.com</p>
-      <button>Logout</button>
+      <p>{userEmail}</p>
+      <button onClick={onLogout}>Logout</button>
     </div>
   );
+};
+
+UserMenu.propTypes = {
+  userEmail: PropTypes.string.isRequired,
+  onLogout: PropTypes.func.isRequired,
 };
 
 export default UserMenu;
