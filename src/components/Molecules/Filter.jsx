@@ -3,21 +3,21 @@ import PropTypes from 'prop-types';
 
 import './filter.css';
 
-const Filter = ({ filter, onChangeFilter }) => (
+const Filter = ({ value, onChange }) => (
   <div className="container">
     <input
       className="filter-input"
       type="text"
       placeholder="Filter contacts"
-      value={filter}
-      onChange={e => onChangeFilter(e.target.value)}
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
     />
   </div>
 );
 
 Filter.propTypes = {
-  filter: PropTypes.string.isRequired,
-  onChangeFilter: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default Filter;

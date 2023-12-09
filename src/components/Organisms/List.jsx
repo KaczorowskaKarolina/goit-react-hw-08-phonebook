@@ -4,14 +4,18 @@ import PropTypes from 'prop-types';
 import './list.css';
 
 const List = ({ contacts, filter, onDeleteContact }) => {
-  const filteredContacts = contacts.filter(contact =>
+  if (!filter) {
+    filter = '';
+  }
+
+  const filteredContacts = contacts.filter((contact) =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
 
   return (
     <div className="container">
       <ul className="contacts-list">
-        {filteredContacts.map(contact => (
+        {filteredContacts.map((contact) => (
           <li className="contacts-item" key={contact.id}>
             {contact.name}: {contact.number}
             <button
@@ -35,7 +39,7 @@ List.propTypes = {
       number: PropTypes.string.isRequired,
     })
   ).isRequired,
-  filter: PropTypes.string.isRequired,
+  filter: PropTypes.string, 
   onDeleteContact: PropTypes.func.isRequired,
 };
 

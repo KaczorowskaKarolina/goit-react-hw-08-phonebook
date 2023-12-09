@@ -21,7 +21,6 @@ const AppContainer = () => {
   }, [dispatch]);
 
   useEffect(() => {
-  
     if (contacts.length > 0) {
       dispatch(fetchContacts());
     }
@@ -29,10 +28,8 @@ const AppContainer = () => {
 
   const addContactOnSubmit = ({ name, number }) => {
     try {
-     
       dispatch(addContact({ id: nanoid(), name, number }));
     } catch (error) {
-     
       alert(error.message);
     }
   };
@@ -46,20 +43,14 @@ const AppContainer = () => {
     dispatch(setFilter(event.target.value.toLowerCase()));
   };
 
-  const showFilteredContact = () => {
-    return contacts.filter((contact) => {
-      return contact.name.toLowerCase().includes(filter);
-    });
-  };
-
   return (
     <div className={css.container}>
       <Header />
       <h1>Phonebook</h1>
       <Form onSubmit={addContactOnSubmit} />
       <h2>Contacts</h2>
-      <Filter value={filter} onChange={onFilterChange} />
-      <List contacts={showFilteredContact()} onDelete={deleteContactHandler} />
+      <Filter value={filter || ''} onChange={onFilterChange} />
+      <List contacts={contacts} filter={filter} onDeleteContact={deleteContactHandler} />
     </div>
   );
 };
