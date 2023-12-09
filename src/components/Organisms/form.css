@@ -11,13 +11,13 @@ form {
 
 .phonebook-btn {
     border-radius: 20px;
-    border: 1px solid rgb(9, 80, 27);
+    border: 1px solid yellowgreen;
     padding: 5%;
     font-weight: bold;
     width: 70%;
     position: relative;
     cursor: pointer;
-    background-color: rgb(90, 248, 130);
+    background-color: greenyellow;
     margin-top: 5px;
     font-size: 12px;
     transition: transform 0.2s;

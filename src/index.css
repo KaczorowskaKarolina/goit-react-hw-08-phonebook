@@ -20,21 +20,6 @@ code {
     monospace;
 }
 
-button {
-  border: none;
-  border-radius: 5px;
-  padding: 8px 16px;
-  background-color: #5c858d;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin: 2px;
-}
-
-button:hover {
-  background-color: #9ce0ee;
-}
-
 input {
   border: none;
 }

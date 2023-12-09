@@ -6,10 +6,10 @@
     gap: 10px;
     justify-content: center;
     align-items: center;
-    background-color: darkgrey;
-    border: 1px solid grey;
-    border-radius: 20px;
-    box-shadow: 5px 5px 5px 5px rgba(21, 21, 21, 0.8);
+    background-color: rgb(207, 207, 142);
+    border: 1px solid rgb(190, 213, 143);
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 2px rgb(97, 136, 97);
     max-width: 600px;
     overflow-y: auto;
     max-height: 50vh;
@@ -28,10 +28,10 @@ nav {
     flex-direction: column;
     font-size: 12px;
     align-items: center;
-    background-color: #5c5b5b;
+    background-color: rgb(180, 215, 126);
     max-width: 100%;
-    border-radius: 4px;
-
+    border-radius: 5px;
+    height: 20px;
 }
 
 nav ul {
@@ -51,11 +51,11 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #fff;
+    color: grey;
     font-weight: bold;
 }
 
 nav ul li a:hover {
     text-decoration: none;
-    color: yellow;
+    color: darkgrey;
 }
