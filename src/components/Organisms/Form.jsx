@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addContactAsync } from '../Atoms/Action';
-// import { addContact } from '../Atoms/Store';
-// import { nanoid } from 'nanoid';
 
 import './form.css';
 
@@ -23,16 +21,13 @@ const Form = () => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    // Sprawdź, czy name i number nie są puste
     if (!name.trim() || !number.trim()) {
       alert('Name and number are required fields.');
       return;
     }
 
-    // Wywołaj akcję dodawania kontaktu
     dispatch(addContactAsync({ name, number }));
 
-    // Zresetuj formularz
     setName('');
     setNumber('');
   };

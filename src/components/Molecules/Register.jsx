@@ -20,9 +20,9 @@ const Register = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    // Tutaj możesz dodać logikę rejestracji, np. przekazać formData do funkcji rejestracji
+    
     console.log('Submitted data:', formData);
-    // W tym miejscu możesz dodać kod do wysłania danych na serwer lub do innego procesu rejestracji
+    
   };
 
   return (

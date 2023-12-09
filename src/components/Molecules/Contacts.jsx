@@ -4,7 +4,6 @@ import AddContactForm from '../ContactForm/ContactForm';
 
 
 const Contacts = () => {
-  // Pobierz kontakty z Redux lub innego miejsca w zależności od potrzeb
   const contacts = [];
 
   return (

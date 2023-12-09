@@ -1,6 +1,4 @@
 import React from 'react';
-// import { useDispatch } from 'react-redux';
-// import { deleteContact } from '../Atoms/Store';
 import PropTypes from 'prop-types';
 
 import './list.css';

@@ -21,8 +21,7 @@ const AppContainer = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    // Dodaj efekt do śledzenia zmian w kontakcie i ponownego pobierania
-    // kontaktów z serwera po dodaniu nowego kontaktu
+  
     if (contacts.length > 0) {
       dispatch(fetchContacts());
     }
@@ -30,10 +29,10 @@ const AppContainer = () => {
 
   const addContactOnSubmit = ({ name, number }) => {
     try {
-      // Dispatch the addContact action
+     
       dispatch(addContact({ id: nanoid(), name, number }));
     } catch (error) {
-      // Handle the error if the contact already exists
+     
       alert(error.message);
     }
   };
@@ -60,7 +59,6 @@ const AppContainer = () => {
       <Form onSubmit={addContactOnSubmit} />
       <h2>Contacts</h2>
       <Filter value={filter} onChange={onFilterChange} />
-      {/* Pass the contacts to the List component */}
       <List contacts={showFilteredContact()} onDelete={deleteContactHandler} />
     </div>
   );
