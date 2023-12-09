@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addContactAsync } from 'redux/actions.jsx';
+import { addContactAsync } from '../Atoms/Action';
 // import { addContact } from '../Atoms/Store';
 // import { nanoid } from 'nanoid';
 
