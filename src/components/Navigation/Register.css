@@ -1,0 +1,32 @@
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.register-label {
+  color: rgb(187, 187, 187);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.register-input {
+  background-color: rgba(187, 187, 187, 0.219);
+}
+
+.register-btn {
+  display: flex;
+  background-color: #ff802b;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  color: #ffffff;
+  font-weight: bolder;
+  max-width: 100%;
+}
+
+.register-btn-container {
+  display: flex;
+  justify-content: center;
+}

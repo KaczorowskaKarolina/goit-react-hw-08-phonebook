@@ -11,7 +11,7 @@ A simple app to store your phone book contacts.
 The application consists of a form and a contact list. It is used to store phone
 contacts, search for contacts and, if necessary, delete them.
 
-![Phonebook](src/phonebook.jpg)
+![Phonebook]()
 
 ## Technologies
 
@@ -40,7 +40,7 @@ contacts, search for contacts and, if necessary, delete them.
 
 ---
 
-![Project structure](src/Project_structure.jpg)
+![Project structure]()
 
 ## Author
 

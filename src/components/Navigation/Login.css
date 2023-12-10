@@ -1,0 +1,32 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.login-label {
+  color: rgb(187, 187, 187);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.login-input {
+  background-color: rgba(187, 187, 187, 0.219);
+}
+
+.login-btn {
+  display: flex;
+  background-color: #5dfd6a;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  color: #ffffff;
+  font-weight: bolder;
+  max-width: 100%;
+}
+
+.login-btn-container {
+  display: flex;
+  justify-content: center;
+}

@@ -1,10 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import * as app from '../Templates/App';
+import * as api from '../services/api';
 
 export const fetchContactsAsync = createAsyncThunk(
   'contacts/fetchContactsAsync',
   async () => {
-    const contacts = await app.fetchContacts();
+    const contacts = await api.fetchContacts();
     return contacts;
   }
 );
@@ -12,7 +12,7 @@ export const fetchContactsAsync = createAsyncThunk(
 export const addContactAsync = createAsyncThunk(
   'contacts/addContactAsync',
   async contact => {
-    const newContact = await app.addContact(contact);
+    const newContact = await api.addContact(contact);
     return newContact;
   }
 );
@@ -20,7 +20,7 @@ export const addContactAsync = createAsyncThunk(
 export const deleteContactAsync = createAsyncThunk(
   'contacts/deleteContactAsync',
   async contactId => {
-    await app.deleteContact(contactId);
+    await api.deleteContact(contactId);
     return contactId;
   }
 );
