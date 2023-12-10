@@ -3,15 +3,15 @@ form {
 }
 
 .phonebook-input {
-  border-radius: 20px;
+  border-radius: 5px;
   padding: 10px;
   border: none;
   width: 90%;
 }
 
 .phonebook-btn {
-  border-radius: 20px;
-  border: 1px solid rgb(9, 80, 27);
+  border-radius: 5px;
+  border: 1px solid rgb(90, 248, 130);
   padding: 5%;
   font-weight: bold;
   width: 70%;
@@ -21,6 +21,7 @@ form {
   margin-top: 5px;
   font-size: 12px;
   transition: transform 0.2s;
+  color:darkgrey;
 }
 
 .phonebook-btn:hover {

@@ -4,8 +4,9 @@ import PropTypes from 'prop-types';
 import '../ContactList/ContactList.css';
 
 const ContactList = ({ contacts, filter, onDeleteContact }) => {
-  const filteredContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
+  const filteredContacts = contacts.filter(
+    contact =>
+      contact.name.toLowerCase().includes(filter ? filter.toLowerCase() : '')
   );
 
   return (
@@ -35,7 +36,7 @@ ContactList.propTypes = {
       number: PropTypes.string.isRequired,
     })
   ).isRequired,
-  filter: PropTypes.string.isRequired,
+  filter: PropTypes.string,
   onDeleteContact: PropTypes.func.isRequired,
 };
 

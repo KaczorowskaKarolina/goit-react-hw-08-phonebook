@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addContactAsync } from 'redux/actions';
 
+import '../ContactForm/ContactForm.css'
+
 const AddContactForm = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
