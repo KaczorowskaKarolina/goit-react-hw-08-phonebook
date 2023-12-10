@@ -8,10 +8,13 @@ A simple app to store your phone book contacts.
 
 ---
 
-The application consists of a form and a contact list. It is used to store phone
-contacts, search for contacts and, if necessary, delete them.
+The application has the ability to register a new user and save his contacts.
+Once the user is already registered, can log in to edit contacts. User can add,
+remove and filter contacts.
 
-![Phonebook]()
+![Phonebook - HOME](./src/home.jpg) ![Phonebook - Register](./src/register.jpg)
+![Phonebook - Login](./src/login.jpg)
+![Phonebook - Contacts](./src/contacts.jpg)
 
 ## Technologies
 
@@ -20,7 +23,7 @@ contacts, search for contacts and, if necessary, delete them.
 - HTML
 - CSS
 - Java Script
-- React.js
+- React.js / Redux
 
 ## Starting up
 
@@ -40,7 +43,7 @@ contacts, search for contacts and, if necessary, delete them.
 
 ---
 
-![Project structure]()
+![Project structure](./src/ProjectStructure.jpg)
 
 ## Author
 
