@@ -1,7 +1,6 @@
 import React from 'react';
-import ContactList from '../ContactList/ContactList';
-import AddContactForm from '../ContactForm/ContactForm';
-
+import ContactList from '../Organisms/List';
+import AddContactForm from '../Organisms/Form';
 
 const Contacts = () => {
   const contacts = [];
