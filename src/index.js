@@ -3,12 +3,12 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Routes, Route, Router } from 'react-router-dom'; // Import BrowserRouter
 import { Provider } from 'react-redux';
 
-import store from 'components/Atoms/Store';
+import { store } from 'components/Atoms/Store';
 import Navigation from 'components/Organisms/Navigation';
-import Home from 'components/Pages/Home';
-import Register from 'components/Molecules/Register';
-import Login from 'components/Molecules/Login';
-import Contacts from 'components/Molecules/Contacts';
+import { Home } from 'components/Pages/Home';
+import { Register } from 'components/Molecules/Register';
+import { Login } from 'components/Molecules/Login';
+import { Contacts } from 'components/Molecules/Contacts';
 // import AppContainer from 'components/Pages/AppContainer';
 import './index.css';
 

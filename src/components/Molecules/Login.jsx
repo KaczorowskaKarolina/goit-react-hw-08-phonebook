@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { app } from '../Templates/App';
+import App from '../Templates/App';
 
 export const Login = () => {
  const [username, setUsername] = useState('');
@@ -10,7 +10,7 @@ export const Login = () => {
  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const user = await app.loginUser(username, password);
+      const user = await App.loginUser(username, password);
       dispatch({ type: 'auth/loginSuccess', payload: user });
     } catch (err) {
       dispatch({ type: 'auth/loginFailed', payload: err.message });
@@ -38,3 +38,5 @@ export const Login = () => {
     </div>
  );
 };
+
+export default Login;

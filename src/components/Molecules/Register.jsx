@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { app } from '../Templates/App';
+import App from '../Templates/App';
 
 export const Register = () => {
  const [username, setUsername] = useState('');
@@ -10,7 +10,7 @@ export const Register = () => {
  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const newUser = await app.registerUser(username, password);
+      const newUser = await App.registerUser(username, password);
       dispatch({ type: 'auth/registerSuccess', payload: newUser });
     } catch (err) {
       dispatch({ type: 'auth/registerFailed', payload: err.message });
@@ -38,3 +38,5 @@ export const Register = () => {
     </div>
  );
 };
+
+export default Register;
