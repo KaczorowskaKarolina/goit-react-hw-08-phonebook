@@ -2,6 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Routes, Route, Router } from 'react-router-dom'; // Import BrowserRouter
 import { Provider } from 'react-redux';
+
 import store from 'components/Atoms/Store';
 import Navigation from 'components/Organisms/Navigation';
 import Home from 'components/Pages/Home';
