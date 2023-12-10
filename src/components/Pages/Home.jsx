@@ -1,12 +1,9 @@
 import React from 'react';
 
-const Home = () => {
-  return (
+export const Home = () => {
+ return (
     <div>
-      <h2>Welcome to the Phonebook App!</h2>
-      <p>Please choose an option:</p>
+      <h2>Home</h2>
     </div>
-  );
+ );
 };
-
-export default Home;
